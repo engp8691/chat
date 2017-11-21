@@ -36,6 +36,7 @@ container.resolve(function(users, _){
 
 	function ConfigureExpress(app){
 		require('./passport/passport-local');
+		require('./passport/passport-facebook');
 
 		app.use(express.static('public'));
 		app.use(cookieParser());
@@ -59,7 +60,6 @@ container.resolve(function(users, _){
 		app.use(passport.session());
 
 		app.locals._ = _;
-
 	}
 });
 
